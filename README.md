@@ -1,0 +1,77 @@
+# 📱 Aulas - Programação de Aplicativos - Curso Técnico em Desenvolvimento de Sistemas do SENAI/SC
+
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Vite](https://img.shields.io/badge/Vite-build-purple?logo=vite)
+![PWA](https://img.shields.io/badge/PWA-enabled-green)
+
+Este repositório contém o projeto desenvolvido durante as aulas de **Frontend com ReactJS** e **Progressive Web Apps (PWA)** na disciplina **Programação de Aplicativos**.
+
+As aulas fazem parte da **2ª fase (2026/2)** do **Curso Técnico em Desenvolvimento de Sistemas do SENAI/SC**.
+
+O objetivo do projeto é aprender, de forma **prática e progressiva**, conceitos de desenvolvimento de aplicações modernas utilizando **ReactJS**, evoluindo até a construção de um **Progressive Web App (PWA)**.
+
+---
+
+# 🚀 Tecnologias utilizadas
+
+Este projeto utiliza as seguintes tecnologias:
+
+- ReactJS
+- Vite
+- JavaScript / TypeScript
+- HTML
+- CSS
+- Progressive Web Apps (PWA)
+
+---
+
+# 💻 Como rodar o projeto localmente
+
+## 1️⃣ Clone o repositório
+
+```bash
+git clone https://github.com/VinnyVNS/aulas-aplicativo-pwa.git
+```
+
+## 2️⃣ Acesse a pasta do projeto
+
+```bash
+cd aulas-aplicativo-pwa
+```
+
+## 3️⃣ Instale as dependências
+
+```bash
+npm install
+```
+
+ou
+
+```bash
+npm i
+```
+
+## 4️⃣ Inicie o servidor de desenvolvimento
+
+```bash
+npm run dev
+```
+
+Após iniciar o servidor, abra o navegador no endereço exibido no terminal (normalmente):
+
+```
+http://localhost:5173
+```
+
+---
+
+# 👨‍🏫 Autor
+
+Projeto desenvolvido por **Vinícius Chaves de Souza** durante as aulas de **Programação de Aplicativos** do docente **Thiago Cordeiro**. **https://github.com/thiagocordeirooo**
+
+---
+
+# 📄 Licença
+
+Este projeto é destinado a **uso educacional**. #aulas-aplicativo-pwa
+"# aluggo-app" 
