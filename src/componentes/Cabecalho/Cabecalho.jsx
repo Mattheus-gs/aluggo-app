@@ -1,0 +1,19 @@
+import Avatar from "../Avatar/Avatar";
+import "./Cabecalho.css";
+
+function Cabecalho() {
+  return (
+    <>
+      <header className="Cabecalho_root">
+        <div className="Cabecalho_titulo">
+          <img src="/favicon.svg" />
+          <h1>Aplicativo PWA</h1>
+        </div>
+        
+        <Avatar nome="Vinicius Souza" />
+      </header>
+    </>
+  );
+}
+
+export default Cabecalho;
