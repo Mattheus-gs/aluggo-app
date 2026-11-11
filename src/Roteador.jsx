@@ -1,35 +1,21 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PaginaInicial from "./paginas/PaginaInicial/PaginaInicial";
-import PaginaListaProdutos from "./paginas/PaginaListaProdutos/PaginaListaProdutos";
-import PaginaListaTarefas from "./paginas/PaginaListaTarefas/PaginaListaTarefas";
-import PaginaCadastroCliente from "./paginas/PaginaCadastroCliente/PaginaCadastroCliente";
-import PaginaListaClientes from "./paginas/PaginaListaClientes/PaginaListaClientes";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PaginaInicial from './paginas/PaginaInicial/PaginaInicial';
+import PaginaCadastroObjeto from './paginas/PaginaCadastroObjeto/PaginaCadastroObjeto';
+import PaginaListaObjetos from './paginas/PaginaListaObjetos/PaginaListaObjetos';
+// Importe o Cabeçalho e Rodapé se eles costumam ficar em volta das rotas no seu projeto
+import Cabecalho from './componentes/Cabecalho/Cabecalho';
+import Rodape from './componentes/Rodape/Rodape';
 
-const roteador = createBrowserRouter([
-  {
-    path: "",
-    element: <PaginaInicial />,
-  },
-  {
-    path: "lista-produtos",
-    element: <PaginaListaProdutos />,
-  },
-  {
-    path: "lista-tarefas",
-    element: <PaginaListaTarefas />,
-  },
-  {
-    path: "cadastro-cliente/:id?",
-    element: <PaginaCadastroCliente />,
-  },
-  {
-    path: "lista-clientes",
-    element: <PaginaListaClientes />,
-  },
-]);
-
-function Roteador() {
-  return <RouterProvider router={roteador} />;
-}
+const Roteador = () => {
+    return (
+        
+            <Routes>
+                <Route path="/" element={<PaginaInicial />} />
+                <Route path="/objetos" element={<PaginaListaObjetos />} />
+                <Route path="/cadastro-objeto" element={<PaginaCadastroObjeto />} />
+            </Routes>
+            
+    );
+};
 
 export default Roteador;

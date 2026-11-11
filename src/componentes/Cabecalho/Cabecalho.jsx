@@ -1,19 +1,15 @@
-import Avatar from "../Avatar/Avatar";
-import "./Cabecalho.css";
+import { Link } from 'react-router-dom';
+import './Cabecalho.css';
 
-function Cabecalho() {
-  return (
-    <>
-      <header className="Cabecalho_root">
-        <div className="Cabecalho_titulo">
-          <img src="/favicon.svg" />
-          <h1>Aplicativo PWA</h1>
-        </div>
-        
-        <Avatar nome="Vinicius Souza" />
-      </header>
-    </>
-  );
-}
+const Cabecalho = () => {
+    return (
+        <header className="cabecalho-aluggo">
+            <div className="logo">
+                <h1>Aluggo</h1>
+            </div>
+            
+        </header>
+    );
+};
 
 export default Cabecalho;

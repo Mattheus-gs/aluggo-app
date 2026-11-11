@@ -1,20 +1,17 @@
-import './App.css'
-import Cabecalho from './componentes/Cabecalho/Cabecalho'
-import Rodape from './componentes/Rodape/Rodape'
-import Roteador from './Roteador'
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
-
+import { BrowserRouter } from 'react-router-dom';
+import Cabecalho from './componentes/Cabecalho/Cabecalho';
+import Rodape from './componentes/Rodape/Rodape';
+import Roteador from './Roteador';
+import './App.css';
 
 function App() {
   return (
-   <>
-      <Cabecalho/>
-      <Roteador/>
-      <Rodape/>
-      <ToastContainer />
-   </>
-  )
+    <BrowserRouter>
+      <Cabecalho />
+      <Roteador />
+      <Rodape />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

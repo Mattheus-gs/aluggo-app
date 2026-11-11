@@ -1,42 +1,21 @@
-import BotaoCustomizado from "../../componentes/BotaoCustomizado/BotaoCustomizado";
-import Principal from "../../componentes/Principal/Principal";
+import { Link } from 'react-router-dom';
 
-import { useNavigate } from "react-router-dom";
-
-function PaginaInicial() {
-  const navigate = useNavigate();
-
-  return (
-    <Principal titulo="Página Inicial">
-      <BotaoCustomizado
-        tipo="primario"
-        aoClicar={() => navigate("/lista-produtos")}
-      >
-        Lista de Produtos
-      </BotaoCustomizado>
-
-      <BotaoCustomizado
-        tipo="primario"
-        aoClicar={() => navigate("/lista-tarefas")}
-      >
-        Lista de Tarefas
-      </BotaoCustomizado>
-
-      <BotaoCustomizado
-        tipo="primario"
-        aoClicar={() => navigate("/cadastro-cliente")}
-      >
-        Cadastro de Cliente
-      </BotaoCustomizado>
-
-      <BotaoCustomizado
-        tipo="primario"
-        aoClicar={() => navigate("/lista-clientes")}
-      >
-        Lista de Clientes
-      </BotaoCustomizado>
-    </Principal>
-  );
-}
+const PaginaInicial = () => {
+    return (
+        <main className="principal" style={{ padding: '40px 20px', textAlign: 'center', color: '#fff' }}>
+            <h1>Bem-vindo ao Aluggo!</h1>
+            <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Alugue. Use. Reutilize.</p>
+            
+            <div style={{ marginTop: '30px', display: 'flex', gap: '20px', justifyContent: 'center' }}>
+                <Link to="/objetos" style={{ backgroundColor: 'var(--cor-botao)', color: '#fff', padding: '10px 20px', textDecoration: 'none', borderRadius: '5px' }}>
+                    Ver Objetos Disponíveis
+                </Link>
+                <Link to="/cadastro-objeto" style={{ backgroundColor: 'var(--cor-aviso)', color: '#fff', padding: '10px 20px', textDecoration: 'none', borderRadius: '5px' }}>
+                    Anunciar um Objeto
+                </Link>
+            </div>
+        </main>
+    );
+};
 
 export default PaginaInicial;

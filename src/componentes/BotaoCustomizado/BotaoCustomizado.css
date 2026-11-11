@@ -15,9 +15,9 @@
 }
 
 .BotaoCustomizado_primario {
-    background-color: var(--cor-primaria);
+    background-color: var(--cor-botao);
 }
 
 .BotaoCustomizado_secundaria {
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-botao);
 }
