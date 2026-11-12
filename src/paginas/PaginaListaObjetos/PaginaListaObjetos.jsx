@@ -1,53 +1,73 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // <-- Importamos o Link aqui
-import { listarObjetos, excluirObjeto } from '../../servicos/objetos.servico';
-import BotaoCustomizado from '../../componentes/BotaoCustomizado/BotaoCustomizado';
+import { useState } from "react";
+import Principal from "../../componentes/Principal/Principal";
+import "./PaginaListaObjetos.css";
+import { listarObjetos } from "../../servicos/objetos.servico";
+import { useNavigate } from "react-router-dom";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import BotaoCustomizado from "../../componentes/BotaoCustomizado/BotaoCustomizado";
 
-const PaginaListaObjetos = () => {
-    const [objetos, setObjetos] = useState([]);
+function PaginaListaObjetos() {
+  const navigate = useNavigate();
+  const [objetos, setObjetos] = useState(listarObjetos());
 
-    useEffect(() => {
-        setObjetos(listarObjetos());
-    }, []);
+  return (
+    <Principal>
+      <div className="PaginaListaObjetos_root">
+        <FaArrowAltCircleLeft
+          size={30}
+          onClick={() => navigate("/")}
+          style={{ cursor: "pointer", color: "var(--cor-texto)" }}
+        />
+        {objetos.map((objeto) => {
+          return (
+            <div key={objeto.id} className="PaginaListaObjetos_objeto">
+              <div className="foto">
+                {objeto.foto && <img src={objeto.foto} alt="Objeto" />}
+              </div>
 
-    const handleExcluir = (id) => {
-        if (window.confirm('Tem certeza que deseja remover este objeto do Aluggo?')) {
-            excluirObjeto(id);
-            setObjetos(listarObjetos());
-        }
-    };
+              <div className="infos">
+                <strong className="modelo">{objeto.nome}</strong>
+                <br></br>
+                <span> Categoria: {objeto.categoria}</span>
+                <br></br>
+                <span>Preço/dia: R$ {objeto.preco}</span>
+                <br></br>
+              </div>
+            </div>
+          );
+        })}
 
-    return (
-        <main className="principal" style={{ padding: '20px' }}>
-            {/* Botão de voltar */}
-            <Link to="/" style={{ display: 'inline-block', marginBottom: '20px', color: 'var(--cor-texto)', textDecoration: 'none', fontWeight: 'bold' }}>
-                &larr; Voltar para o Início
-            </Link>
-
-            <h2>Objetos Disponíveis</h2>
+        <div className="PaginaListaObjetos_addObjeto">
+          <BotaoCustomizado
+            className="botao"
+            aoClicar={() => navigate("/cadastro-objeto")}
+            style={{
+              cursor: "pointer",
+              color: "var(--cor-texto)",
+              fontWeight: "bold",
+            }}
+          >
             
-            {objetos.length === 0 ? (
-                <p style={{ marginTop: '20px' }}>Nenhum objeto disponível no momento. Seja o primeiro a anunciar!</p>
-            ) : (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', marginTop: '20px' }}>
-                    {objetos.map(obj => (
-                        <div key={obj.id} style={{ border: '2px solid var(--cor-primaria)', borderRadius: '8px', padding: '20px', backgroundColor: 'var(--cor-primaria)' }}>
-                            <h3 style={{ color: 'var(--cor-texto)', margin: '0 0 10px 0' }}>{obj.nome}</h3>
-                            <p style={{ margin: '5px 0', color: 'var(--cor-texto)' }}><strong>Descrição:</strong> {obj.descricao}</p>
-                            <p style={{ margin: '5px 0', color: 'var(--cor-texto)' }}><strong>Categoria:</strong> {obj.categoria}</p>
-                            <p style={{ margin: '5px 0', color: 'var(--cor-texto)', fontSize: '1.2em', fontWeight: 'bold' }}>
-                                R$ {obj.preco} / dia
-                            </p>
-                            <p style={{ color: obj.disponivel ? 'var(--cor-secundaria)' : 'red', fontWeight: 'bold', margin: '10px 0' }}>
-                                {obj.disponivel ? '🟢 Disponível' : '🔴 Alugado'}
-                            </p>
-                            <BotaoCustomizado onClick={() => handleExcluir(obj.id)}>Remover Anúncio</BotaoCustomizado>
-                        </div>
-                    ))}
-                </div>
-            )}
-        </main>
-    );
-};
+           <span>Adicionar objeto</span>
+            <span>+</span>
+          </BotaoCustomizado>
+        </div>
+      </div>
+
+      {!objetos.length && (
+        <span
+          className="PaginaListaObjetos_vazia"
+          style={{
+            color: "var(--cor-texto)",
+            display: "block",
+            marginTop: "20px",
+          }}
+        >
+          Nenhum objeto disponível no momento.
+        </span>
+      )}
+    </Principal>
+  );
+}
 
 export default PaginaListaObjetos;

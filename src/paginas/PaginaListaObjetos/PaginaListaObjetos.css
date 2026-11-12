@@ -1,0 +1,73 @@
+.principal-lista {
+    padding: 20px;
+    color: var(--cor-texto);
+}
+
+.mensagem-vazia {
+    margin-top: 20px;
+}
+
+.grid-objetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card-objeto {
+    border: 2px solid var(--cor-primaria);
+    border-radius: 8px;
+    padding: 20px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto);
+}
+
+.card-objeto h3 {
+    margin: 0 0 10px 0;
+}
+
+.card-objeto p {
+    margin: 5px 0;
+}
+
+.preco {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.status-disponivel {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.status-alugado {
+    color: #e74c3c;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.foto img{
+    width: 50%;
+}
+
+.PaginaListaObjetos_addObjeto{
+    margin-top: 20px;
+    width: 45%;
+    border-radius: 10px solid black ;
+    text-align: center;
+}
+
+
+
+.PaginaListaObjetos_objeto{
+     background-color: var(--cor-fundo2) ;
+    border-radius: 10px;
+    border: 5px solid rgb(112, 134, 109);
+   padding: 10px;
+
+}
+
+.PaginaListaObjetos_objeto{
+    color: var(--cor-input);
+}

@@ -1,0 +1,30 @@
+.principal-cadastro {
+    padding: 20px;
+    color: var(--cor-texto);
+}
+
+.link-voltar {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin-top: 20px;
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+
+.PaginaCadastroObjeto_botao{
+    display: flex;
+    justify-content: center;
+}
+

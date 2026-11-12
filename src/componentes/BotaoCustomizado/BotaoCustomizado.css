@@ -1,9 +1,16 @@
 .BotaoCustomizado_root {
+    display: flex;
+    flex-direction: column;
+
     border: 2px solid #ccc;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 100px;
     cursor: pointer;
     color: white;
+    background-color: var(--cor-botao);
+    width: 100%;
+    font-size: 20px;
+
 }
 
 .BotaoCustomizado_root:hover {

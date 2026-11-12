@@ -8,7 +8,7 @@ function Rodape() {
       <footer className="Rodape_root">
         <span>
           <strong>
-            Copyright @{anoAtual} - Todos os direitos reservados - Vinicius
+            Copyright @{anoAtual} - Todos os direitos reservados - Mattheus
           </strong>
         </span>
       </footer>

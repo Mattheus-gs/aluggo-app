@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import './PaginaInicial.css';
 
 const PaginaInicial = () => {
     return (
-        <main className="principal" style={{ padding: '40px 20px', textAlign: 'center', color: '#fff' }}>
+        <main className="pagina-inicial">
             <h1>Bem-vindo ao Aluggo!</h1>
-            <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Alugue. Use. Reutilize.</p>
+            <p className="subtitulo">Alugue. Use. Reutilize.</p>
             
-            <div style={{ marginTop: '30px', display: 'flex', gap: '20px', justifyContent: 'center' }}>
-                <Link to="/objetos" style={{ backgroundColor: 'var(--cor-botao)', color: '#fff', padding: '10px 20px', textDecoration: 'none', borderRadius: '5px' }}>
+            <div className="botoes-acao">
+                <Link to="/objetos" className="btn-primario">
                     Ver Objetos Disponíveis
                 </Link>
-                <Link to="/cadastro-objeto" style={{ backgroundColor: 'var(--cor-aviso)', color: '#fff', padding: '10px 20px', textDecoration: 'none', borderRadius: '5px' }}>
+                <Link to="/cadastro-objeto" className="btn-secundario">
                     Anunciar um Objeto
                 </Link>
             </div>

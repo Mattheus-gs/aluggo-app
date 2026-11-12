@@ -1,5 +1,6 @@
 :root {
   --cor-fundo: #00838F;
+  --cor-fundo2:#00444b;
   --cor-input: #B5E6EB;
   --cor-texto: #263238;
   --cor-botao: #2E7D32;
@@ -13,7 +14,15 @@
   font-family: Arial, sans-serif;
 }
 
-body {
+body, html {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
+  height: 100%;
+}
+
+
+#root {
+  display: grid;
+  grid-template-rows: 100px 1fr 80px;
+  height: 100%;
 }
