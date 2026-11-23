@@ -71,3 +71,28 @@
 .PaginaListaObjetos_objeto{
     color: var(--cor-input);
 }
+
+.PaginaListaObjetos_acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-editar, .btn-apagar {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-editar {
+  background-color: var(--cor-secundaria);
+}
+
+.btn-apagar {
+  background-color: var(--cor-aviso);
+}

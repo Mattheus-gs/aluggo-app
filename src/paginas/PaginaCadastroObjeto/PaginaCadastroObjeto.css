@@ -28,3 +28,15 @@
     justify-content: center;
 }
 
+.icone-voltar {
+  cursor: pointer;
+  color: var(--cor-texto);
+}
+
+.preview-foto img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 10px;
+}
