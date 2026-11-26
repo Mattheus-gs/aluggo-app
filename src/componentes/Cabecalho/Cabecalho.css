@@ -1,18 +1,36 @@
-.Cabecalho_root {
+.cabecalho-aluggo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: var(--cor-primaria-clara);
-  padding: 8px 16px;
+  justify-content: center;
+  height: 100%;
+  padding: 0 20px;
+  background: linear-gradient(135deg, var(--cor-fundo2) 0%, #005b63 100%);
+  border-bottom: 2px solid rgba(181, 230, 235, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  position: relative;
+  z-index: 20;
 }
 
-.Cabecalho_titulo {
+.logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  padding: 8px 22px;
+  border-radius: 999px;
+  background-color: rgba(0, 131, 143, 0.22);
+  border: 1px solid rgba(181, 230, 235, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
-.Cabecalho_titulo img {
-  width: 40px;
-  height: 40px;
+.logo h1 {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+

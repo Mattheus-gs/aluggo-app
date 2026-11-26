@@ -6,10 +6,11 @@ import "./PaginaCadastroObjeto.css";
 import { cadastrarObjeto, buscarObjetoPorId, atualizarObjeto } from "../../servicos/objetos.servico";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function PaginaCadastroObjeto() {
   const navigate = useNavigate();
-  const { id } = useParams(); // Pega o ID da URL, se houver
+  const { id } = useParams(); 
 
   const [formObjeto, setFormObjeto] = useState({
     id: "",
@@ -30,8 +31,14 @@ function PaginaCadastroObjeto() {
   }, [id]);
 
   const salvar = () => {
+    if(!formObjeto.nome || !formObjeto.categoria || !formObjeto.preco || !formObjeto.foto){
+      toast.error("Informações faltando!!!")
+    return
+    }
+   
     if (id) {
       atualizarObjeto(formObjeto);
+      
     } else {
       cadastrarObjeto(formObjeto);
     }
@@ -42,7 +49,7 @@ function PaginaCadastroObjeto() {
     <Principal>
       <div className="PaginaCadastroObjeto_root">
         <div className="PaginaCadastroObjeto_voltar">
-          <FaArrowAltCircleLeft size={30} onClick={() => navigate("/objetos")} className="icone-voltar" />
+          <FaArrowAltCircleLeft size={30} onClick={() => navigate("/")} className="icone-voltar" />
         </div>
 
         <div className="PaginaCadastroObjeto_campo">
@@ -72,6 +79,7 @@ function PaginaCadastroObjeto() {
 
           <CampoCustomizado
             label="Preço por dia (R$)"
+            type="number"
             maxLength={10}
             placeholder="Ex: 50.00"
             value={formObjeto.preco}

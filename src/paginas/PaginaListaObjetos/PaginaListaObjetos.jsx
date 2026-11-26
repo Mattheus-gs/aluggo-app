@@ -3,15 +3,14 @@ import Principal from "../../componentes/Principal/Principal";
 import "./PaginaListaObjetos.css";
 import { listarObjetos, excluirObjeto } from "../../servicos/objetos.servico";
 import { useNavigate } from "react-router-dom";
-import { IoIosAdd } from "react-icons/io";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import { FaArrowAltCircleLeft, FaEdit, FaTrash } from "react-icons/fa";
 
 function PaginaListaObjetos() {
   const navigate = useNavigate();
   const [objetos, setObjetos] = useState(listarObjetos());
 
   const handleExcluir = (id) => {
-    if (window.confirm("Tem certeza que deseja apagar este objeto?")) {
+    if (confirm("Tem certeza que deseja apagar este objeto?")) {
       excluirObjeto(id);
       setObjetos(listarObjetos());
     }
@@ -19,17 +18,24 @@ function PaginaListaObjetos() {
 
   return (
     <Principal>
+      <FaArrowAltCircleLeft size={30} onClick={() => navigate("/")} className="icone-voltar" />
       <div className="PaginaListaObjetos_root">
         {objetos.map((objeto) => (
           <div key={objeto.id} className="PaginaListaObjetos_objeto">
+            <div className="imagem">
             {objeto.foto && <img src={objeto.foto} alt={objeto.nome} />}
-
+            </div>
             <div className="infos">
               <strong className="modelo">{objeto.nome}</strong>
+              <br />
+              <strong >{objeto.descricao || "Descrição não informada"}</strong>
+              <br />
               <span>Categoria: {objeto.categoria}</span>
+              <br />
               <span>Preço/dia: R$ {objeto.preco}</span>
+              <br />
               <span className={objeto.disponivel ? "status-disponivel" : "status-alugado"}>
-                {objeto.disponivel ? "Disponível" : "Alugado"}
+                situação:  {objeto.disponivel ? "Disponível" : "Alugado"}
               </span>
             </div>
 
@@ -53,17 +59,15 @@ function PaginaListaObjetos() {
         ))}
 
         <div className="PaginaListaObjetos_addObjeto">
-          <div>
-            <span
-              className="PaginaListaObjetos_textoAdd"
-              onClick={() => navigate("/cadastro-objeto")}
-            >
-              Anunciar Novo Objeto
-            </span>
-          </div>
-
-          <div className="PaginaListaObjetos_botaoAdd">
-            <IoIosAdd size={70} onClick={() => navigate("/cadastro-objeto")} />
+          <div
+          className="PaginaListaObjetos_textoAdd"
+              onClick={() => navigate("/cadastro-objeto")}>
+            
+              
+            
+              
+              +
+           
           </div>
         </div>
       </div>
